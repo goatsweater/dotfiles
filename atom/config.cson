@@ -1,0 +1,25 @@
+"*":
+  "exception-reporting":
+    userId: "fca75c9d-fef8-780a-9671-ab945afbe90e"
+  welcome:
+    showOnStartup: false
+  core:
+    themes: [
+      "native-ui"
+      "atom-dark-syntax"
+    ]
+    projectHome: "/Users/goatsweater/Projects"
+  editor:
+    invisibles: {}
+    fontSize: 12
+    tabLength: 4
+    showIndentGuide: true
+    softWrapAtPreferredLineLength: true
+    softWrap: true
+  "one-dark-ui": {}
+  tabs:
+    showIcons: true
+  tree-view:
+    hideVcsIgnoredFiles: false
+    hideIgnoredNames: false
+    showOnRightSide: false

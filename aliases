@@ -1,0 +1,47 @@
+# Shortcuts
+alias dl="cd ~/Downloads"
+alias p="cd ~/Projects"
+
+# File listing
+alias la="ls -laF"
+alias lsd="ls -lF | grep '^d'"
+
+# Get week number
+alias week='date +%V'
+
+# IP addresses
+alias localip="ipconfig getifaddr en0"
+
+# Clean LaunchServices to remove duplicates in Open With menu
+alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+
+# OS X has no md5sum, use md5 as a fallback
+command -v md5sum > /dev/null || alias md5sum="md5"
+
+# OS X has no sha1sum, use shasum as a fallback
+command -v sha1sum > /dev/null || alias sha1sum="shasum"
+
+# Recursively remove .DS_Store files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+
+# Empty the trash on internal HDD and all mounted volumes
+# Also clear Apple's system logs to improve shell startup speed
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide"defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# Show/hide all desktop icons
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+# Merge PDF Files
+# Usage: `mergepdf -o output.pdf input{1,2,3}.pdf`
+alias mergepdf="/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py"
+
+# Lock the screen (when going AFK)
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# Reload the shell (i.e. invoke as a login shell)
+alias reload="exec $SHELL -l"
